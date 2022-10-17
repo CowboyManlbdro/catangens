@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Котангенс</title>
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <script src="js/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <section class="main">
+      <img class="main_bg" src="img/main_bg.svg" alt="" />
+      <div class="cat">
+        <div class="cat_wrap">
+          <canvas id="canvas"></canvas>
+          <div class="mounth_wrap">
+            <img src="img/mounth.svg" alt="" class="mounth" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="header">
+      <div class="hands">
+        <img src="img/left.svg" alt="" class="left_hand">
+        <img src="img/right.svg" alt="" class="right_hand">
+      </div>
+      <div class="text_header main_header">Котангенс</div>
+    </section>
+
+    <section class="about">
+      <div class="main_subheader">С нами математика стала ещё интереснее!</div>
+      <div class="specification">
+        <div class="specification_item">
+          <div class="text_header specification_header">Математика</div>
+          <div class="specification_descr">
+            <img src="icons/specifications/math.svg" alt="" class="specification_icon">
+            <div class="specification_text">Только интересные математические задания</div>
+          </div>
+        </div>
+        <div class="specification_item">
+          <div class="text_header specification_header">Соревнования</div>
+          <div class="specification_descr">
+            <img src="icons/specifications/competition.svg" alt="" class="specification_icon">
+            <div class="specification_text">Участвуй один или в команде</div>
+          </div>
+        </div>
+        <div class="specification_item">
+          <div class="text_header specification_header">Онлайн</div>
+          <div class="specification_descr">
+            <img src="icons/specifications/online.svg" alt="" class="specification_icon">
+            <div class="specification_text">Все участвуют онлайн</div>
+          </div>
+        </div>
+        <div class="specification_item">
+          <div class="text_header specification_header">Таблица лидеров</div>
+          <div class="specification_descr">
+            <img src="icons/specifications/leaders.svg" alt="" class="specification_icon">
+            <div class="specification_text">Соревнуйся, получай опыт, попадай в лидеры</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how">
+      <button class="main_btn" >Войти</button>
+      <div class="text_header how_header">Как принять участие?</div>
+      <div class="how_levels">
+        <div class="how_item">
+          <img src="icons/how/log-in.svg" alt="" class="how_icon">
+          <div class="how_text"><b>Авторизируйся</b> и выполни вход в систему как ученик, студент или педагог.</div>
+        </div>
+        <div class="how_item">
+          <img src="icons/how/learn.svg" alt="" class="how_icon">
+          <div class="how_text"><b>Познакомся с платформой</b> и <b>пройди тренировку</b>, чтобы лучше разобраться в системе.</div>
+        </div>
+        <div class="how_item">
+          <img src="icons/how/training.svg" alt="" class="how_icon">
+          <div class="how_text"><b>Тренируйся</b>, совершенствуй свои навыки и у тебя обязательно всё получится!</div>
+        </div>
+        <div class="how_item">
+          <img src="icons/how/help.svg" alt="" class="how_icon">
+          <div class="how_text">Если у тебя остались <b>вопросы</b> или <b>нужна помощь</b>, нажми на вопросительный знак в правом углу экрана.</div>
+        </div>
+      </div>
+    </section>
+
+    <div id="auth" class="window_bg">
+      <div class="window_wrap auth">
+        <img src="img/cat_window.svg" alt="" class="cat_window">
+        <div class="window auth">
+          <img src="img/hands.svg" alt="" class="cat_window_hands">
+          <img src="img/feet.svg" alt="" class="cat_window_feets">
+        <form id="logform" method="post" action="login.php#window_result"></form>
+            <div class="text_header window_header">Вход</div>
+            <!-- <div class="window_type">
+              <input type="radio" name="q" id="radio1" class="radio" value="stud"><label for="radio1">Ученик</label>
+              <input type="radio" name="q" id="radio2" class="radio" value="prep"><label for="radio2">Преподаватель</label>
+            </div> -->
+            <input form="logform" name="login" type="text" class="window_input" placeholder="Логин">
+            <input form="logform" name="pass" type="password" class="window_input" placeholder="Пароль">
+            <div class="window_btns">
+              <button form="logform" type="submit" class="window_btn auth_btn">Войти</button>
+              <button class="window_btn reg_btn">Регистрация</button>
+            </div>
+        </div>
+      </div>
+  </div>
+
+  <div id="reg" class="window_bg">
+    <div class="window_wrap reg">
+      <img src="img/cat_window.svg" alt="" class="cat_window">
+      <div class="window reg">
+        <img src="img/hands.svg" alt="" class="cat_window_hands">
+        <img src="img/feet.svg" alt="" class="cat_window_feets">
+          <div class="text_header window_header">Регистрация</div>
+          <div class="window_type">
+            <input type="radio" name="q" id="radio1" class="radio" value="stud"><label for="radio1">Ученик</label>
+            <input type="radio" name="q" id="radio2" class="radio" value="prep"><label for="radio2">Преподаватель</label>
+          </div>
+          <form method="post" action="new_user.php#window_result">
+            <input type="text" name="f" class="window_input" placeholder="ваша фамилия">
+            <input type="text" name="i" class="window_input" placeholder="ваше имя">
+            <input type="text" name="o" class="window_input" placeholder="ваше отчество (при наличии)">
+            <input type="email" name="email" class="window_input" placeholder="введите электронную почту">
+            <input type="text" name="login" class="window_input" placeholder="придумайте ник">
+            <input type="password" name="pass" class="window_input" placeholder="придумайте пароль">
+            <button class="window_btn reg_on_btn">Зарегистрироваться</button>
+            </form>
+      </div>
+    </div>
+</div>
+
+
+
+    <script>
+        $(document).click(function (e) {
+            if ($(e.target).is('.window_bg')) {
+                $(".window_bg").fadeOut(400);
+            }
+        });
+
+        $(".main_btn").click(function (e) { 
+          e.preventDefault();
+          $("#auth").fadeIn(400);
+        });
+
+        $(".reg_btn").click(function (e) { 
+          e.preventDefault();
+          $("#auth").fadeOut(400);
+          $("#reg").delay(400).fadeIn(400);
+        });
+    </script>
+
+
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+      let eyes = [];
+      let theta;
+      const mouse = {
+        x: undefined,
+        y: undefined,
+      };
+      window.addEventListener("mousemove", function (e) {
+        mouse.x = e.clientX - canvas.getBoundingClientRect().left;
+        mouse.y = e.clientY - canvas.getBoundingClientRect().top;
+      });
+
+      class Eye {
+        constructor(x, y, radius) {
+          this.x = x;
+          this.y = y;
+          this.radius = radius;
+        }
+        draw() {
+          let dx = mouse.x - this.x;
+          let dy = mouse.y - this.y;
+          theta = Math.atan2(dy, dx);
+
+          // глаз
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+          ctx.fillStyle = "rgb(219 238 255)";
+          ctx.fill();
+          ctx.closePath();
+
+          // радужная оболочка
+          let iris_x = this.x + (Math.cos(theta) * this.radius) / 7;
+          let iris_y = this.y + (Math.sin(theta) * this.radius) / 7;
+          let irisRadius = this.radius / 1.2;
+          ctx.beginPath();
+          ctx.arc(iris_x, iris_y, irisRadius, 0, Math.PI * 2, true);
+          ctx.fillStyle = "rgb(4 160 223)";
+          ctx.fill();
+          ctx.closePath();
+
+          // зрачок
+          let pupilRadius = this.radius / 1.5;
+          let pupil_x = this.x + (Math.cos(theta) * this.radius) / 4;
+          let pupil_y = this.y + (Math.sin(theta) * this.radius) / 4;
+          ctx.beginPath();
+          ctx.arc(pupil_x, pupil_y, pupilRadius, 0, Math.PI * 2, true);
+          ctx.fillStyle = "black";
+          ctx.fill();
+          ctx.closePath();
+
+          // отражение зрачка
+          ctx.beginPath();
+          ctx.arc(
+            pupil_x + 5 + pupilRadius / 3,
+            pupil_y - 5 - pupilRadius / 3,
+            pupilRadius / 3,
+            0,
+            Math.PI * 2,
+            true
+          );
+          ctx.fillStyle = "rgb(255,255,255)";
+          ctx.fill();
+          ctx.closePath();
+        }
+      }
+      function init() {
+        eyes = [];
+        let numberOfEyes = 1; // Кол-во глаз
+        let eye_left = {
+          x: 45,
+          y: 45,
+          radius: 30, // радиус глаз
+        };
+        eyes.push(new Eye(eye_left.x, eye_left.y, eye_left.radius));
+        let eye_right = {
+          x: 173,
+          y: 45,
+          radius: 30, // радиус глаз
+        };
+        eyes.push(new Eye(eye_right.x, eye_right.y, eye_right.radius));
+      }
+      function animate() {
+        requestAnimationFrame(animate);
+        ctx.fillStyle = "rgb(219 238 255/ 0)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < eyes.length; i++) {
+          eyes[i].draw();
+        }
+      }
+      init();
+      animate();
+      window.addEventListener("resize", function () {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+        init();
+      });
+    </script>
+  </body>
+</html>
